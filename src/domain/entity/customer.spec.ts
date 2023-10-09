@@ -28,7 +28,7 @@ describe("Costumer unit test", () => {
     expect(customer.isActive()).toBe(true);
   });
 
-  it("should deaactivate costumer", () => { 
+  it("should desactivate costumer", () => { 
     const customer = new Customer("1","Costumer 01");
     customer.deactivate();
     expect(customer.isActive()).toBe(false);
