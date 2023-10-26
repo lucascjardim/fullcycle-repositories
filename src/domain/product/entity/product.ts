@@ -15,7 +15,7 @@ export default class Product implements ProductInterface{
   validate():boolean{
     if(this._id.length === 0) throw new Error("Id product is required");
     if(this._name.length === 0) throw new Error("Name product is required");
-    if(this._price < 0) throw new Error("price must be greater than zero");
+    if(this._price <= 0) throw new Error("price must be greater than zero");
     return true
   }
 
