@@ -20,7 +20,6 @@ describe("unit test list product use case", () => {
     const productRepository = MockRepository();
     const listProductUseCase = new ListProductUseCase(productRepository);
     const output = await listProductUseCase.execute({});
-    console.log(output)
     expect(output.products.length).toBe(2);
     expect(output.products[0].id).toBe(product1.id);
     expect(output.products[0].name).toBe(product1.name);
