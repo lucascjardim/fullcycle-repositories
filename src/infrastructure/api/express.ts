@@ -4,6 +4,7 @@ import CustomerModel from "../customer/repository/sequelize/customer.model";
 import { customerRoute } from "./routes/customer.route";
 import { productRoute } from "./routes/product.route";
 import ProductModel from "../product/repository/sequelize/product.model";
+import path from "path";
 
 export const app: Express = express();
 app.use(express.json());
@@ -15,7 +16,8 @@ export let sequelize: Sequelize;
 async function setupDb() {
   sequelize = new Sequelize({
     dialect:'sqlite',
-    storage:'memory',
+    //storage:':memory',
+    host: path.join(__dirname, '../../../../db.sqlite'),
     logging:false,
   });
   

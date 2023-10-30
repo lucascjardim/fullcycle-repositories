@@ -13,10 +13,10 @@ productRoute.post("/", async(req:Request, res:Response) => {
       name:req.body.name,
       price:req.body.price,
     }
-
     const output = await usecase.execute(productDto);
     res.send(output);
   }catch(err){
+    console.log(err);
     res.status(500).send(err)
   }
 });
@@ -28,6 +28,7 @@ productRoute.get("/", async(req:Request, res:Response) => {
     res.send(output);
   }
   catch(err){
+    console.log(err);
     res.status(500).send(err);
   }
 });
