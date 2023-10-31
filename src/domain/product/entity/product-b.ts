@@ -1,4 +1,6 @@
+import ProductValidatorFactory from "../factory/product.validator.factory";
 import ProductInterface from "./product.interface";
+import NotificationError from "../../@shared/notification/notification.error";
 
 export default class ProductB implements ProductInterface{
   private _id: string;
@@ -13,9 +15,11 @@ export default class ProductB implements ProductInterface{
   }
 
   validate():boolean{
+    
     if(this._id.length === 0) throw new Error("Id product is required");
     if(this._name.length === 0) throw new Error("Name product is required");
     if(this._price < 0) throw new Error("price must be greater than zero");
+    
     return true
   }
 
